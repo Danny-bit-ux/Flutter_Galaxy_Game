@@ -26,7 +26,10 @@ class Player extends Enity {
         top: y,
         left: x,
         child: visible
-            ? Transform.rotate(angle: _angle, child: sprites.first)
+            ? Transform.rotate(
+                angle: _angle,
+                child: sprites[currentSprite],
+              )
             : SizedBox());
   }
 
@@ -56,10 +59,5 @@ class Player extends Enity {
 
     isMoveLeft = false;
     isMoveRight = false;
-  }
-
-  @override
-  void update() {
-    move();
   }
 }
